@@ -3,11 +3,6 @@
 rm -rf target/site/reference
 rm -rf target/site/pdf
 
-pushd .
-cd examples
-mvn clean install
-popd 
-
 mkdir -p target/site/reference
 mkdir -p target/site/pdf
 
@@ -23,4 +18,4 @@ python template.py
 
 cp target/site/reference/index.html target/site/reference/public-book.html
 
-rsync -e ssh -av target/site/* deployer@www.sonatype.com:/var/www/domains/sonatype.com/www/shared/books/mvnex-book/
+rsync -e ssh -av target/site/* deployer@marketing01.int.sonatype.com:/var/www/domains/sonatype.com/www/shared/books/mvnex-book/
